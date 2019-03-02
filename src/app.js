@@ -11,6 +11,7 @@ import path from 'path';
 import user from './user';
 import cookieParser from 'cookie-parser';
 import choosenAnswer from './choosenAnswer';
+import logOut from './logOut';
 
 
 const verifyToken = user.verifyToken;
@@ -40,6 +41,7 @@ app.post('/api/v1/auth/logIn', logIn);
 app.post('/api/v1/voteDown/:questionId/:answerId', verifyToken, voteDown);
 app.post('/api/v1/voteUp/:questionId/:answerId', verifyToken, voteUp);
 app.post('/api/v1/choosenanswer/:questionId/:answerId', choosenAnswer);
+app.post('/api/v1/auth/logOut', logOut);
 
 
 
