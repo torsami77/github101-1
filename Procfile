@@ -1,1 +1,1 @@
-web: node ./src/app.js
+web: babel-node --presets env,stage-2 ./src/app.js

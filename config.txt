@@ -3,3 +3,4 @@
     "mocha": "mocha --compilers js:babel-register",
     "test": "mocha --compilers js:babel-register --recursive ./test/",
     "babel-node": "babel-preset-env",
+"heroku-postbuild": "npm install --production"
