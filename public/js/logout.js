@@ -1,5 +1,5 @@
 const logOut = () => {
-    let uri = 'http://localhost:5000/api/v1/auth/logOut';
+    let uri = `${URL}/api/v1/auth/logOut`;
     let h = new Headers({'content-type': 'application/json'});
 
 

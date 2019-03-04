@@ -35,7 +35,7 @@ let postQuestion = () => {
 let bearer = `Bearer ${token}`;
 
 
-let uri = 'http://localhost:5000/api/v1/questions';
+let uri = `${URL}/api/v1/questions`;
 let h = new Headers({'content-type': 'application/json', 'authorization': bearer});
 let body = {
     questions: postedQ,
@@ -115,7 +115,7 @@ let showAnswers = (questionId) => {
     
     if(document.getElementById(`answersDiv${questionId}`).innerHTML.replace(/[^0-9A-Za-z\,]/g, "") === ''){
 
-    let uri = `http://localhost:5000/api/v1/questions/${questionId}`;
+    let uri = `${URL}/api/v1/questions/${questionId}`;
     let h = new Headers({'content-type': 'application/json'});
  
     
@@ -270,7 +270,7 @@ let addComment = (qId) => {
 let bearer = `Bearer ${token}`;
 
 
-let uri = `http://localhost:5000/api/v1/questions/${qId}/answers`;
+let uri = `${URL}/api/v1/questions/${qId}/answers`;
 let h = new Headers({'content-type': 'application/json', 'authorization': bearer});
 let body = {
     username: username,
@@ -336,7 +336,7 @@ let voteDown = (qId, aId) => {
     let bearer = `Bearer ${token}`;
     
     
-    let uri = `http://localhost:5000/api/v1/voteDown/${qId}/${aId}`;
+    let uri = `${URL}/api/v1/voteDown/${qId}/${aId}`;
     let h = new Headers({'content-type': 'application/json', 'authorization': bearer});
     let body = {
         username: username
@@ -381,7 +381,7 @@ let voteUp = (qId, aId) => {
     let bearer = `Bearer ${token}`;
     
     
-    let uri = `http://localhost:5000/api/v1/voteUp/${qId}/${aId}`;
+    let uri = `${URL}/api/v1/voteUp/${qId}/${aId}`;
     let h = new Headers({'content-type': 'application/json', 'authorization': bearer});
     let body = {
         username: username

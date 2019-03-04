@@ -18,7 +18,7 @@ const logIn = () => {
         document.getElementById('password').focus();
         return;
     }
-let uri = 'http://localhost:5000/api/v1/auth/logIn';
+let uri = `${URL}/api/v1/auth/logIn`;
 let h = new Headers({'content-type': 'application/json'});
 let body = {
     email: email,

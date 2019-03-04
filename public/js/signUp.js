@@ -5,7 +5,7 @@ const signUp = () => {
     let password = document.getElementById('password').value;
     let verify = document.getElementById('verify').value;
 
-let uri = 'http://localhost:5000/api/v1/auth/signUp';
+let uri = `${URL}/api/v1/auth/signUp`;
 let h = new Headers({'content-type': 'application/json'});
 let body = {
     username: username,

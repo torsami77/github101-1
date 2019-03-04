@@ -7,7 +7,7 @@ let choosen = (qId, aId) => {
 
         let bearer = `Bearer ${token}`;
         
-        let uri = `http://localhost:5000/api/v1/choosenanswer/${qId}/${aId}`;
+        let uri = `${URL}/api/v1/choosenanswer/${qId}/${aId}`;
         let h = new Headers({'content-type': 'application/json', 'authorization': bearer});
     
         

@@ -1,7 +1,7 @@
 
 let overFlowingQuestions = () => {
 
-    let uri = 'http://localhost:5000/api/v1/questions';
+    let uri = `${URL}/api/v1/questions`;
     let h = new Headers({'content-type': 'application/json'});
     
     let req = new Request(uri, {
@@ -81,7 +81,7 @@ let overFlowingQuestions = () => {
 
 let myRecentlyAskQuestions = () => {
 
-    let uri = 'http://localhost:5000/api/v1/questions';
+    let uri = `${URL}/api/v1/questions`;
     let h = new Headers({'content-type': 'application/json'});
     
     let req = new Request(uri, {
@@ -167,7 +167,7 @@ let myRecentlyAskQuestions = () => {
 
 let myMostAnsweredQuestions = () => {
 
-    let uri = 'http://localhost:5000/api/v1/questions';
+    let uri = `${URL}/api/v1/questions`;
     let h = new Headers({'content-type': 'application/json'});
     
     let req = new Request(uri, {
