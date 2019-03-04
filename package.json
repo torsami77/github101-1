@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./src/app.js",
     "build": "babel src -d dist",
     "mocha": "mocha --compilers js:babel-register",
     "test": "mocha --compilers js:babel-register --recursive ./test/",
