@@ -9,12 +9,13 @@
     ]
   },
   "scripts": {
-    "clean": "rm -rf dist && mkdir dist",
-    "serve": "node dist/index.js",
-    "start": "nodemon --exec babel-node --presets env,stage-2 ./src/app.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-server",
-    "build-server": "babel src -d dist",
-    "test": "mocha --compilers js:babel-register"
+    "start": "node ./build/app.js",
+    "test": "mocha --compilers js:babel-register --recursive ./test/",
+    "babel-node": "babel-preset-env",
+    "heroku-postbuild": "npm install --production"
   },
   "repository": {
     "type": "git",
