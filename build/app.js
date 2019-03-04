@@ -90,7 +90,7 @@ app.post('/api/v1/voteUp/:questionId/:answerId', verifyToken, voteUp);
 app.post('/api/v1/choosenanswer/:questionId/:answerId', _choosenAnswer2.default);
 app.post('/api/v1/auth/logOut', _logOut2.default);
 
-var PORT = 5000;
+var PORT = process.env.PORT || 5000;
 
 app.listen(PORT, function () {
   console.log('server running on port ' + PORT);
