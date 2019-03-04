@@ -13,7 +13,7 @@ import cookieParser from 'cookie-parser';
 import choosenAnswer from './choosenAnswer';
 import logOut from './logOut';
 
-
+const PORT = process.env.PORT || 5000;
 const verifyToken = user.verifyToken;
 const voteDown = votes.voteDown;
 const voteUp = votes.voteUp;
@@ -36,7 +36,7 @@ app.get('/api/v1/questions', getAllQuestions);
 app.get('/api/v1/questions/:questionId', getAQuestion);
 app.post('/api/v1/questions/', verifyToken, addAQuestion);
 app.post('/api/v1/questions/:questionId/answers', verifyToken, addAnAnswer);
-app.post('/api/v1/auth/signUp', signUp);
+app.post(`${PORT}/api/v1/auth/signUp`, signUp);
 app.post('/api/v1/auth/logIn', logIn);
 app.post('/api/v1/voteDown/:questionId/:answerId', verifyToken, voteDown);
 app.post('/api/v1/voteUp/:questionId/:answerId', verifyToken, voteUp);
@@ -45,7 +45,7 @@ app.post('/api/v1/auth/logOut', logOut);
 
 
 
-const PORT = process.env.PORT || 5000;
+
 
 app.listen(PORT, () => {
       console.log(`server running on port ${PORT}`)
