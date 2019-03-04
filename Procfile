@@ -1,1 +1,1 @@
-web: babel-node --presets env,stage-2 ./src/app.js
+ web: npm run build && node dist/index.js
