@@ -9,7 +9,11 @@
     ]
   },
   "scripts": {
-    "start": "node ./src/app.js",
+    "start": "node --exec babel-node --presets env,stage-2 ./src/app.js",
+    "build": "babel src -d dist",
+    "mocha": "mocha --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register --recursive ./test/",
+    "babel-node": "babel-preset-env",
     "heroku-postbuild": "npm install --production"
   },
   "repository": {
