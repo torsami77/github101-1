@@ -10,10 +10,10 @@
   },
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "build-server": " -d ./build ./src -s",
+    "build-server": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-server",
-   
-    "start": "babel-node ./build/app.js",
+
+    "start": "babel-node ./build/index.js",
     "test": "mocha --compilers js:babel-register --recursive ./test/",
     "babel-node": "babel-preset-env",
     "heroku-postbuild": "npm install --production"
