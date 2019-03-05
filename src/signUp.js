@@ -59,7 +59,7 @@ if(verify === ''){
 
 pool.query('SELECT * FROM users WHERE (email = $1 OR username = $2)', [email, username], (err, result) => {
    
-    if(result.rows[0]){
+    if(typeof(result.rows[0]) !== 'undefined'){
        
         const db = result.rows[0];
 

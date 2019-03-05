@@ -60,7 +60,7 @@ var logIn = function logIn(req, res, next) {
 
     pool.query('SELECT username, answers, password FROM users WHERE (email = $1)', [email], function (err, result) {
 
-        if (result) {
+        if (typeof result.rows[0] !== 'undefined') {
 
             _bcryptjs2.default.compare(password, result.rows[0].password, function (err, response) {
                 if (err) {
