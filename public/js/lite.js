@@ -54,7 +54,7 @@ const validateForm=()=> {
     }
 }
 
-let IS_DEV_MODE = true;
+let IS_DEV_MODE = false;
 
 
 const URL = IS_DEV_MODE
