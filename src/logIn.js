@@ -31,7 +31,7 @@ const logIn = (req, res, next) => {
 
     pool.query('SELECT username, answers, password FROM users WHERE (email = $1)', [email], (err, result) => {
 
-            if(result){
+            if(result.rows[0]){
             
                 bcrypt.compare(password, result.rows[0].password, (err, response) => {
                     if(err){

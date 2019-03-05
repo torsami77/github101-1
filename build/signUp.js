@@ -80,7 +80,8 @@ var signUp = function signUp(req, res) {
 
     pool.query('SELECT * FROM users WHERE (email = $1 OR username = $2)', [email, username], function (err, result) {
 
-        if (result) {
+        if (result.rows[0]) {
+            console.log(result);
             var db = result.rows[0];
 
             if (db.username === username) {
@@ -110,10 +111,10 @@ var signUp = function signUp(req, res) {
             _bcryptjs2.default.hash(password, 10, function (err, hash) {
                 if (err) {
 
-                    return {
+                    return res.status(400).send({
                         success: 'false',
                         message: err
-                    };
+                    });
                 } else {
                     pool.query('INSERT INTO users (email, username, password, signupdate, answers) VALUES($1, $2, $3, $4, $5)', [email, username, hash, new Date(), 0], function (err, result) {
 
@@ -122,6 +123,12 @@ var signUp = function signUp(req, res) {
                             return res.status(201).send({
                                 success: 'true',
                                 message: 'Your Signed up was successful'
+                            });
+                        } else {
+                            console.log(err);
+                            return res.status(400).send({
+                                success: 'false',
+                                message: err
                             });
                         }
                     });
