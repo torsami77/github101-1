@@ -59,4 +59,4 @@ let IS_DEV_MODE = false;
 
 const URL = IS_DEV_MODE
   ? 'http://localhost:5000'
-  : 'https://github101.herokuapp.com';
+  : 'http://github101.herokuapp.com';
