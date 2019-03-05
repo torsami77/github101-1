@@ -63,6 +63,7 @@ var _logOut2 = _interopRequireDefault(_logOut);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var PORT = process.env.PORT || 5000;
 var verifyToken = _user2.default.verifyToken;
 var voteDown = _votes2.default.voteDown;
 var voteUp = _votes2.default.voteUp;
@@ -89,8 +90,6 @@ app.post('/api/v1/voteDown/:questionId/:answerId', verifyToken, voteDown);
 app.post('/api/v1/voteUp/:questionId/:answerId', verifyToken, voteUp);
 app.post('/api/v1/choosenanswer/:questionId/:answerId', _choosenAnswer2.default);
 app.post('/api/v1/auth/logOut', _logOut2.default);
-
-var PORT = process.env.PORT || 5000;
 
 app.listen(PORT, function () {
   console.log('server running on port ' + PORT);

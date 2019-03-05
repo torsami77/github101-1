@@ -80,7 +80,7 @@ var signUp = function signUp(req, res) {
 
     pool.query('SELECT * FROM users WHERE (email = $1 OR username = $2)', [email, username], function (err, result) {
 
-        if (result.rows.length > 0) {
+        if (result) {
             var db = result.rows[0];
 
             if (db.username === username) {
