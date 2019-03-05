@@ -93,7 +93,7 @@ pool.query('SELECT * FROM users WHERE (email = $1 OR username = $2)', [email, us
                 
                 return res.status(400).send({
                    success: `false`,
-                   message: err
+                   message: `err`
                 });
             }else{
                 pool.query('INSERT INTO users (email, username, password, signupdate, answers) VALUES($1, $2, $3, $4, $5)', 
