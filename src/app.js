@@ -36,7 +36,7 @@ app.get('/api/v1/questions', getAllQuestions);
 app.get('/api/v1/questions/:questionId', getAQuestion);
 app.post('/api/v1/questions/', verifyToken, addAQuestion);
 app.post('/api/v1/questions/:questionId/answers', verifyToken, addAnAnswer);
-app.post(`${PORT}/api/v1/auth/signUp`, signUp);
+app.post(`/api/v1/auth/signUp`, signUp);
 app.post('/api/v1/auth/logIn', logIn);
 app.post('/api/v1/voteDown/:questionId/:answerId', verifyToken, voteDown);
 app.post('/api/v1/voteUp/:questionId/:answerId', verifyToken, voteUp);
