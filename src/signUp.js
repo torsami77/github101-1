@@ -91,10 +91,10 @@ pool.query('SELECT * FROM users WHERE (email = $1 OR username = $2)', [email, us
         bcrypt.hash(password, 10, (err, hash) => {
             if(err) {
                 
-                return {
+                return res.status(400).send({
                    success: `false`,
                    message: err
-                };
+                });
             }else{
                 pool.query('INSERT INTO users (email, username, password, signupdate, answers) VALUES($1, $2, $3, $4, $5)', 
                 [email, username, hash, new Date(), 0], (err, result) => {
@@ -104,6 +104,11 @@ pool.query('SELECT * FROM users WHERE (email = $1 OR username = $2)', [email, us
                             return res.status(201).send({
                                 success: `true`,
                                 message: `Your Signed up was successful`
+                            });
+                        }else{
+                            return res.status(400).send({
+                                success: `false`,
+                                message: err
                             });
                         }
                 });
