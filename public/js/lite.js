@@ -10,7 +10,7 @@ const signupform = `
 <button class="link" onclick=memberForm('signup')>Log in here</button>
 </p>
 </div>
-<form onsubmit="return signUp();">
+<form method="post" onsubmit="return signUp();">
 <p><input type="text" name="username" id="username" class="input-field" placeholder="Create Username" autofocus required pattern="[a-z]{4,8}"/></p>
 <p><input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" required /></p>
 <p><input type="password" name="password" id="password" class="input-field" placeholder="Create a password" required/></p>
@@ -28,7 +28,7 @@ const loginform = `
     <button class="link" onclick=memberForm('login')>Sign up here</button>
 </p>
 </div>
-<form onsubmit="return logIn();">
+<form method="post" onsubmit="return logIn();">
     <p><input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" autofocus required /></p>
     <p><input type="password" name="password" id="password" class="input-field" placeholder="Create a password" required/></p>
     <p><button type="submit" onclick=logIn()>Log in</button></p>
