@@ -40,17 +40,21 @@ fetch(req)
                 <button class="link" onclick=memberForm('login')>Sign up here</button>
             </p>
             </div>
-            <p><input type="email" name="email" id="email" placeholder="Enter your email" required /></p>
-            <p><input type="password" name="password" id="password" placeholder="Create a password" required/></p>
-            <p><button onclick=logIn()>Log in</button></p>
+            <form onsubmit="return logIn();">
+            <p><input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" autofocus required /></p>
+            <p><input type="password" name="password" id="password" class="input-field" placeholder="Create a password" required/></p>
+            <p><button type="submit" onclick=logIn()>Log in</button></p>
+            </form>
             `;
 
             const registered = info + loginform;
            
 document.getElementById('member').innerHTML = registered;
+return false;
         }else{
 document.getElementById('info').innerHTML = `<p class="false" id="status">${data.message}</p>`;
 document.getElementById(data.field).focus();
+return false;
         }
      
     });

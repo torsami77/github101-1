@@ -1,4 +1,6 @@
-/* Divides */
+body{
+  zoom: 85%;
+}
 @keyframes info {
   0% {
 visibility: visible;
@@ -381,6 +383,14 @@ footer .left-pane div{
   padding: 1px 1px;
 }
 
+.input-field{
+  border-radius: 4px;
+  padding: 2px 2px;
+}
+.input-field:focus {
+background-color: yellow;
+
+}
 
 /* End of classes */
 

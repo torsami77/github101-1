@@ -10,13 +10,13 @@ const logIn = () => {
     if(email.replace(/[^0-9A-Za-z\,]/g, "") === '' ){
         document.getElementById('info').innerHTML = `<p class="false" id="status">Email field can't be left empty</p>`;
         document.getElementById('email').focus();
-        return;
+        return false;
     }
 
     if(password.replace(/[^0-9A-Za-z\,]/g, "") === '' ){
         document.getElementById('info').innerHTML = `<p class="false" id="status">Password field can't be left empty</p>`;
         document.getElementById('password').focus();
-        return;
+        return false;
     }
 let uri = `${URL}/api/v1/auth/logIn`;
 let h = new Headers({'content-type': 'application/json'});
@@ -42,6 +42,7 @@ fetch(req)
 
         }else{
 document.getElementById('info').innerHTML = `<p class="false" id="status">${data.message}</p>`;
+return false;
         }
      
     });

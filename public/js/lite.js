@@ -10,11 +10,13 @@ const signupform = `
 <button class="link" onclick=memberForm('signup')>Log in here</button>
 </p>
 </div>
-<p><input type="text" name="username" id="username" placeholder="Create Username" required pattern="[a-z]{4,8}"/></p>
-<p><input type="email" name="email" id="email" placeholder="Enter your email" required /></p>
-<p><input type="password" name="password" id="password" placeholder="Create a password" required/></p>
-<p><input type="password" name="verify" id="verify" placeholder="Verify your password" required /></p>
+<form onsubmit="return signUp();">
+<p><input type="text" name="username" id="username" class="input-field" placeholder="Create Username" autofocus required pattern="[a-z]{4,8}"/></p>
+<p><input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" required /></p>
+<p><input type="password" name="password" id="password" class="input-field" placeholder="Create a password" required/></p>
+<p><input type="password" name="verify" id="verify" class="input-field" placeholder="Verify your password" required /></p>
 <p><button onclick='signUp()'>Sign up</button></p>
+</form>
 `;
 
 const loginform = `
@@ -26,10 +28,11 @@ const loginform = `
     <button class="link" onclick=memberForm('login')>Sign up here</button>
 </p>
 </div>
-<p><input type="email" name="email" id="email" placeholder="Enter your email" required /></p>
-<p><input type="password" name="password" id="password" placeholder="Create a password" required/></p>
-<p><button onclick=logIn()>Log in</button></p>
-<p class="link">Forgot password? Click here</p>
+<form onsubmit="return logIn();">
+    <p><input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" autofocus required /></p>
+    <p><input type="password" name="password" id="password" class="input-field" placeholder="Create a password" required/></p>
+    <p><button type="submit" onclick=logIn()>Log in</button></p>
+</form>
 `;
 
 const memberForm = (status) => {

@@ -20,6 +20,10 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
+var _user = require('./user');
+
+var _user2 = _interopRequireDefault(_user);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
@@ -29,12 +33,7 @@ app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_bodyParser2.default.text());
 app.use(_bodyParser2.default.json({ type: 'application/json' }));
 
-var pool = new _pg2.default.Pool({
-    user: 'samipostgres',
-    host: '127.0.0.1',
-    database: 'mydatabase',
-    password: 'samipostgres',
-    port: '5432' });
+var pool = _user2.default.pool;
 
 var signUp = function signUp(req, res) {
     var _req$body = req.body,
