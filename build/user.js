@@ -32,20 +32,19 @@ app.use(_bodyParser2.default.json({ type: 'application/json' }));
 var secret = 'secret';
 
 var pool = new _pg2.default.Pool({
-    /* user: 'samipostgres',
-     host: '127.0.0.1',
-     database: 'mydatabase',
-     password: 'samipostgres',
-     port: '5432'
-     */
-
-    //heroku
-    host: 'ec2-54-225-237-84.compute-1.amazonaws.com',
-    Database: 'd6npb1cqus4ps1',
-    User: 'dcdlhhqbgpkvxx',
-    Port: '5432',
-    Password: 'dfd71496b432bd5b245cc13ce7e57e1a7dc81202e7ea862919a3a86ca24d2ed2'
+    user: 'samipostgres',
+    host: '127.0.0.1',
+    database: 'mydatabase',
+    password: 'samipostgres',
+    port: '5432'
 });
+/*
+const connectionString = 'postgres://fgxmlcmztjlnqa:78ed6f0c9e151eb1f3fbb6e8a7a50ba3d4a9bf471e6498ea527119a2169ea645@ec2-107-20-167-11.compute-1.amazonaws.com:5432/da9ssf8703fkcj';
+
+const pool = new pg.Pool({
+  connectionString: connectionString
+})
+*/
 
 var verifyToken = function verifyToken(req, res, next) {
 

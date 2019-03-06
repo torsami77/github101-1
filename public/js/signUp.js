@@ -40,11 +40,9 @@ fetch(req)
                 <button class="link" onclick=memberForm('login')>Sign up here</button>
             </p>
             </div>
-            <form method="post" onsubmit="return logIn();">
             <p><input type="email" name="email" id="email" class="input-field" placeholder="Enter your email" autofocus required /></p>
             <p><input type="password" name="password" id="password" class="input-field" placeholder="Create a password" required/></p>
-            <p><button type="submit" onclick=logIn()>Log in</button></p>
-            </form>
+            <p><button type="submit" id="signin" onclick=logIn()>Log in</button></p>
             `;
 
             const registered = info + loginform;

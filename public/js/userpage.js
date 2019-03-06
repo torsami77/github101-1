@@ -100,13 +100,14 @@ let showAnswers = (questionId) => {
 
     if(username === ''){
     commentSection = `<div>
-    <p class="important">You must be logged in to contribute, </br>either sign up or log in on the member area</p>
+    <p class="important">There's no any comment to this question yet, </br>
+    You must be logged in to contribute your comments, </br>either sign up or log in on the member area</p>
     `}else{
         commentSection = `
         <p>
-        <textarea id="comment${questionId}" rows="10" cols="40" placeholder="Add comment to this thread..." required></textarea>
+        <textarea class="comment-event" id="comment${questionId}" rows="10" cols="40" placeholder="Add comment to this thread..." required></textarea>
         </p>
-        <p><button onClick="addComment(${questionId})">Add comment</button></p>
+        <p><button id="addcomment" onClick="addComment(${questionId})">Add comment</button></p>
         </form>
     </div></div>`;
     }
