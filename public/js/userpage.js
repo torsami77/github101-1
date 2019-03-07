@@ -354,7 +354,7 @@ let voteDown = (qId, aId) => {
             .then((data) => {
                 if(data.message === `Auth failed`){
                     alert('Inactive logging session, Kindly login or signup to cast your vote!');
-                    window.location.replace("index.html");
+                    return false;
                 }
 
                 if(data.success === `true`){
@@ -399,7 +399,7 @@ let voteUp = (qId, aId) => {
             .then((data) => {
                 if(data.message === `Auth failed`){
                     alert('Inactive logging session, Kindly login or signup to cast your vote!');
-                    window.location.replace("index.html");
+                    return false;
                 }
 
                 if(data.success === `true`){

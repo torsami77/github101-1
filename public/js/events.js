@@ -23,6 +23,7 @@ document.addEventListener("keyup", (event) => {
 
     if (document.querySelector(".comment-event")) {
         document.querySelector("#addcomment").click();
+        return false;
     }
 
     if (document.querySelector("#postQuestion")) {
