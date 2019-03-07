@@ -54,8 +54,8 @@ var verifyToken = function verifyToken(req, res, next) {
         req.userData = decoded;
         next();
     } catch (error) {
-        res.cookie("userData", '');
-        res.cookie("token", '');
+        res.cookie("userData", null);
+        res.cookie("token", null);
 
         res.status(401).send({
             success: 'false',

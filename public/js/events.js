@@ -21,15 +21,6 @@ document.addEventListener("keyup", (event) => {
         document.querySelector("#signup").click();
     }
 
-    if (event.target.id !== "postQuestion") {
-        document.querySelector("#addcomment").click();
-        return false;
-    }
 
-    if (event.target.id === "postQuestion") {
-        document.querySelector("#submitQuestion").click();
-        return false;
-    }
-  
   }
 });
