@@ -1,6 +1,17 @@
-"start": "nodemon --exec babel-node --presets env,stage-2 ./src/app.js", //default
- "build": "babel src -d dist",
-    "mocha": "mocha --compilers js:babel-register",
+/////default
+"start": "nodemon --exec babel-node --presets env,stage-2 ./src/app.js", 
+"build": "babel src -d dist",
+"mocha": "mocha --compilers js:babel-register",
+"test": "mocha --compilers js:babel-register --recursive ./test/",
+"babel-node": "babel-preset-env",
+"heroku-postbuild": "npm install --production"
+
+
+///heroku
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-server",
+    "start": "npm run build && babel-node ./build/app.js",
     "test": "mocha --compilers js:babel-register --recursive ./test/",
     "babel-node": "babel-preset-env",
-"heroku-postbuild": "npm install --production"
+    "heroku-postbuild": "npm install --production"

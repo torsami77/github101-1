@@ -9,7 +9,7 @@ logInEnter.addEventListener("keyup", (event) => {
 */
 
 document.addEventListener("keyup", (event) => {
-   
+  
 
   if (event.keyCode === 13) {
    event.preventDefault();
@@ -21,15 +21,15 @@ document.addEventListener("keyup", (event) => {
         document.querySelector("#signup").click();
     }
 
-    if (document.querySelector(".comment-event")) {
+    if (event.target.id !== "postQuestion") {
         document.querySelector("#addcomment").click();
         return false;
     }
 
-    if (document.querySelector("#postQuestion")) {
+    if (event.target.id === "postQuestion") {
         document.querySelector("#submitQuestion").click();
+        return false;
     }
   
   }
 });
-

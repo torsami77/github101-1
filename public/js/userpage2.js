@@ -116,7 +116,8 @@ let myRecentlyAskQuestions = () => {
                 questionArray.forEach(each => {
 
                     let  totalVotes = 0;
-               
+
+                   
                    each.answers.forEach(parseVote => {
                     vote = JSON.parse(parseVote);
                     totalVotes = totalVotes + vote.upVotes.length + vote.downVotes.length               
@@ -147,7 +148,7 @@ let myRecentlyAskQuestions = () => {
                     </div>
                 </div>`;
                 }); 
-
+              
                 allQuestions += `</div>` ;
                 document.getElementById('interactions').innerHTML = allQuestions;
 

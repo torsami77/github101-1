@@ -446,6 +446,7 @@ background-color: yellow;
   border: #cccccc solid 1px;
   margin: 0px 15%;
   width: 50%;
+  min-height: 550px;
 }
 /* End of IDs */
 
