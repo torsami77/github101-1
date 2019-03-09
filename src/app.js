@@ -21,6 +21,16 @@ const voteUp = votes.voteUp;
 
 const app = express();
 
+
+const allowCrossDomain = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
+
+
+app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());                                    
@@ -42,7 +52,6 @@ app.post('/api/v1/voteDown/:questionId/:answerId', verifyToken, voteDown);
 app.post('/api/v1/voteUp/:questionId/:answerId', verifyToken, voteUp);
 app.post('/api/v1/choosenanswer/:questionId/:answerId', choosenAnswer);
 app.post('/api/v1/auth/logOut', logOut);
-
 
 
 

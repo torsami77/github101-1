@@ -13,7 +13,7 @@ let questionId = '14';
 chai.use(chaiHttp);
 
 
-const agent = superagent.agent();
+const cagent = superagent.agent();
 const randusername = Math.random().toString(36).substring(8);
 const staticpassword = "iamtheluchadore";
 const theAccount = {
@@ -49,7 +49,7 @@ let logInCreatedUser = new Promise((request, done) => {
             console.log(err);
             throw err;
             }
-            
+            cagent.saveCookies( res )
             done(agent);
         });
 });

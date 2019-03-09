@@ -29,6 +29,5 @@ describe('Endpoint 1: Get All Questions', () => {
       });
   });
 
-
 });
 
