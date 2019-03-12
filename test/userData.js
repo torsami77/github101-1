@@ -1,13 +1,16 @@
+/*
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import request from 'request';
+import app from '../src/app';
+import { promises } from 'fs';
 
 const should = chai.should();
 const expect = chai.expect();
-
+let questionId = '14';
 
 chai.use(chaiHttp);
 
-const url = '/api/v1/questions/';
 const randusername = Math.random().toString(36).substring(8);
 
 const body = {
@@ -25,7 +28,7 @@ describe('Endpoint 3: Add A Questions', () => {
      .set('Accept', 'application/json')
      .send(body)
      .end((err, res) => {
-       res.body.should.have.property('success').eql('true');
+       expect(res.success).to.equal('true');
      })
       
       it('Login Random User', (done) => {
@@ -33,7 +36,7 @@ describe('Endpoint 3: Add A Questions', () => {
           .set('Accept', 'application/json')
           .send(body)
           .end((err, res) => {
-            expect(res.body.success).to.equal('true');
+            expect(res.success).to.equal('true');
             res.should.have.status(200);
             let token = res.header['set-cookie'][1].split("=")[1].split(";")[0];
           })
@@ -78,3 +81,19 @@ describe('Endpoint 3: Add A Questions', () => {
   })
 
 })
+
+/*
+const logInUser = new Promise((done) => {
+    api.post('/api/v1/auth/logIn')
+       .set('Accept','application/json')
+       .send(body)
+       .end((err, res) => {
+        expect(res.success).to.equal('true');
+        res.should.have.status(200);
+            let token = res.header['set-cookie'][1].split("=")[1].split(";")[0];
+      });
+      done();
+})
+
+  export default {signUpUser, logInUser};
+*/
