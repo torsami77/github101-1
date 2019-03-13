@@ -100,8 +100,8 @@ let showAnswers = (questionId) => {
 
     if(username === ''){
     commentSection = `<div>
-    <p class="important">There's no any comment to this question yet, </br>
-    You must be logged in to contribute your comments, </br>either sign up or log in on the member area</p>
+    <p class="important">
+    You must be logged in to contribute your comment, </br>either sign up or log-in through the member area</p>
     `}else{
         commentSection = `
         <p>
