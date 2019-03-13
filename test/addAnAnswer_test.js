@@ -4,7 +4,7 @@ import chaiHttp from 'chai-http';
 const should = chai.should;
 const expect = chai.expect;
 
-const url = 'api/v1/questions/2/answers';
+const url = 'api/v1/questions/1/answers';
 
 chai.use(chaiHttp);
 
