@@ -4,6 +4,7 @@ import chaiHttp from 'chai-http';
 const should = chai.should;
 const expect = chai.expect;
 
+const url = 'api/v1/questions/2/answers';
 
 chai.use(chaiHttp);
 
@@ -38,7 +39,10 @@ describe('Endpoint 4: Add An Answer', () => {
                 res.should.have.status(200);
                 let token = res.header['set-cookie'][1].split("=")[1].split(";")[0];
             })
-                let bearer = `Bearer ${token}`;
+                let bearer = `Bearer ${token}`,
+                body = {
+                    answer : 'Travis is a CI Platform'
+                }
                     it('Should Have Access', (done) => {
                         api.post(url)
                         .send(data)

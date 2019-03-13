@@ -52,7 +52,7 @@ describe('Endpoint 3: Add A Questions', () => {
               api.post(url)
                  .set(`content-type': 'application/json', 'authorization': ${bearer}`)
                  .send(data)
-                 .end(function(err, res){
+                 .end((err, res) => {
                    res.body.should.be.a('object');
                  done();
                  });
