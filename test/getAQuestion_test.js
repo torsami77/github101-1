@@ -5,7 +5,7 @@ import app from '../src/app';
 
 const should = chai.should();
 const expect = chai.expect();
-const url = '/api/v1/questions/14';
+const url = '/api/v1/questions/26';
 let questionId = '14';
 
 chai.use(chaiHttp);
@@ -33,7 +33,7 @@ describe('Endpoint 2: Get A Question', () => {
   it('Should Check Properties of Response Received Upon Access', (done) => {
    api.get(url)
       .end((err, res) => {
-        res.body.questionData.should.have.property('id').eql(14);
+        res.body.questionData.should.have.property('id').eql(26);
         res.body.questionData.should.have.property('question');
         res.body.questionData.should.have.property('time');
         res.body.questionData.should.have.property('answers');
@@ -42,7 +42,7 @@ describe('Endpoint 2: Get A Question', () => {
   });
 
   it('Should Check Error Upon Invalid Question ID', (done) => {
-   api.get('/api/v1/questions/a')
+   api.get('/api/v1/questions/1')
       .end((err, res) => {
         res.should.have.status(404);
         res.body.success.should.equal('false');

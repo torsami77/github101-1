@@ -23,7 +23,7 @@ describe('Endpoint 1: Get All Questions', () => {
 
   it('Should Check Type of Response Received', (done) => {
    api.get(url)
-      .end(function(err, res){
+      .end((err, res) => {
         res.body.should.be.a('object');
       done();
       });

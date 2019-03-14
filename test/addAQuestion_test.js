@@ -1,3 +1,5 @@
+/*
+
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
@@ -78,3 +80,5 @@ describe('Endpoint 3: Add A Questions', () => {
   })
 
 })
+
+*/

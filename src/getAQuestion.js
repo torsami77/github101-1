@@ -10,7 +10,7 @@ const getAQuestion = (req, res) => {
 
     pool.query('SELECT * FROM questions WHERE id=$1', [id], (err, result)=>{
        
-        if(result){
+        if(typeof(result.rows[0]) !== 'undefined'){
         result.rows[0].viewed  = result.rows[0].viewed + 1;
 pool.query('UPDATE questions SET viewed = $1 WHERE id = $2', [result.rows[0].viewed, id], (error, viewedUpdate) => {
 })
