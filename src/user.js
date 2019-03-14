@@ -17,6 +17,7 @@ const pool = new pg.Pool({
     password: '',
     user: 'postgres',
     database: 'testing_db',
+    ssl: true,
 
     //user: 'samipostgres',
     //password: 'samipostgres',
