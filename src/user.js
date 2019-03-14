@@ -16,9 +16,8 @@ const connectionString = 'postgres://fgxmlcmztjlnqa:78ed6f0c9e151eb1f3fbb6e8a7a5
 const pool = new pg.Pool({
     password: '',
     user: 'postgres',
-    database: 'testing_db',
-    ssl: true,
-
+    //database: 'testing_db',
+    
     //user: 'samipostgres',
     //password: 'samipostgres',
     //database: 'mydatabase',
