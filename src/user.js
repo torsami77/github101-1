@@ -16,10 +16,13 @@ const connectionString = 'postgres://fgxmlcmztjlnqa:78ed6f0c9e151eb1f3fbb6e8a7a5
 const pool = new pg.Pool({
    
  
-    
-    user: 'samipostgres',
-    password: 'samipostgres',
-    database: 'mydatabase',
+    user: 'fgxmlcmztjlnqa',
+    password: '78ed6f0c9e151eb1f3fbb6e8a7a50ba3d4a9bf471e6498ea527119a2169ea645',
+    database: 'da9ssf8703fkcj',
+
+    //user: 'samipostgres',
+    //password: 'samipostgres',
+    //database: 'mydatabase',
 
 
     host: '127.0.0.1',
