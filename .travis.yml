@@ -16,10 +16,10 @@ before_install:
   - npm install -g standard
 
 before_script:
-  - psql -c 'CREATE DATABASE testing_db;' -U postgres
-  - psql -c 'CREATE TABLE questions (id serial NOT NULL, username character varying NOT NULL, question character varying NOT NULL, answers character varying[] NOT NULL, viewed integer NOT NULL, "time" date NOT NULL, PRIMARY KEY (id));' -U postgres
-  - psql -c 'CREATE TABLE users(id serial NOT NULL, username character varying NOT NULL, email character varying NOT NULL, password character varying NOT NULL, answers integer NOT NULL, signupdate date NOT NULL, PRIMARY KEY (id));' -U postgres
-  - psql -c 'INSERT INTO questions (username, question, answers, viewed, time) VALUES('demouser', 'What is travis', [], 0, NOW());' -U postgres
+  - psql -c "CREATE DATABASE testing_db;" -U postgres
+  - psql -c "CREATE TABLE questions (id serial NOT NULL, username character varying NOT NULL, question character varying NOT NULL, answers character varying[] NOT NULL, viewed integer NOT NULL, "time" date NOT NULL, PRIMARY KEY (id));" -U postgres
+  - psql -c "CREATE TABLE users(id serial NOT NULL, username character varying NOT NULL, email character varying NOT NULL, password character varying NOT NULL, answers integer NOT NULL, signupdate date NOT NULL, PRIMARY KEY (id));" -U postgres
+  - psql -c "INSERT INTO questions (username, question, answers, viewed, time) VALUES('demouser', 'What is travis', [], 0, NOW());" -U postgres
 
 env:
   global:
