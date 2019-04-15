@@ -2,25 +2,29 @@ sudo: false
 
 language: node_js
 
-env:
-  - DB=postgres://fgxmlcmztjlnqa:78ed6f0c9e151eb1f3fbb6e8a7a50ba3d4a9bf471e6498ea527119a2169ea645@ec2-107-20-167-11.compute-1.amazonaws.com:5432/da9ssf8703fkcj
-
 node_js:
   - node
-
-variables:
-  POSTGRES_USER: fgxmlcmztjlnqa
-  POSTGRES_PASSWORD: 78ed6f0c9e151eb1f3fbb6e8a7a50ba3d4a9bf471e6498ea527119a2169ea645
 
 cache:
   directories:
     - node_modules
-
 services:
   - postgresql
 
 before_install:
   - npm config set spin false
+  - npm install -g standard
+
+before_script:
+  - psql -c 'CREATE DATABASE testing_db;' -U postgres
+  - psql -c 'CREATE TABLE questions (id serial NOT NULL, username character varying NOT NULL, question character varying NOT NULL, answers character varying[] NOT NULL, viewed integer NOT NULL, "time" date NOT NULL, PRIMARY KEY (id));' -U postgres
+  - psql -c 'CREATE TABLE users(id serial NOT NULL, username character varying NOT NULL, email character varying NOT NULL, password character varying NOT NULL, answers integer NOT NULL, signupdate date NOT NULL, PRIMARY KEY (id));' -U postgres
+  - psql -c 'INSERT INTO questions (username, question, answers, viewed, time) VALUES('demouser', 'What is travis', [], 0, NOW());' -U postgres
+
+env:
+  global:
+    - export NODE_ENV=test
+    - export SECRET_KEY = '#1001-tapsuk-bis-bellal;kajd;lf9u2309ruld;fa '
 
 script:
   - npm test
